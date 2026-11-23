@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media PWA</title>
+
+  <meta name="theme-color" content="#c834d9">
+  <meta name="description" content="Uso de cámara, micrófono y capacidades del dispositivo">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Media PWA</h1>
+    <button id="btnInstall" hidden>Instalar</button>
+  </header>
+
+  <main>
+    <!-- Cámara -->
+    <section class="card">
+      <h2>Cámara</h2>
+      <div class="controls">
+        <button id="btnStartCam">Iniciar cámara</button>
+        <button id="btnStopCam" disabled>Detener cámara</button>
+        <button id="btnFlip" disabled>Cambiar cámara</button>
+        <button id="btnTorch" disabled>Linterna</button>
+        <button id="btnShot" disabled>Tomar foto</button>
+        <select id="videoDevices" aria-label="Cámaras disponibles"></select>
+      </div>
+
+      <div class="media">
+        <video id="video" autoplay playsinline muted></video>
+        <canvas id="canvas" class="hidden"></canvas>
+      </div>
+
+      <div id="photos" class="gallery"></div>
+    </section>
+
+    <!-- Audio -->
+    <section class="card">
+      <h2>Micrófono</h2>
+      <div class="controls">
+        <button id="btnStartRec">Grabar audio</button>
+        <button id="btnStopRec" disabled>Detener grabación</button>
+        <span id="recStatus"></span>
+      </div>
+      <div id="audios" class="gallery"></div>
+    </section>
+
+    <!-- Vibración y tono -->
+    <section class="card">
+      <h2>Vibración y tono de llamada</h2>
+      <div class="controls">
+        <button id="btnVibrar">Vibrar</button>
+        <button id="btnRingtone">Reproducir tono</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Media PWA · Cámara, micrófono y capacidades del dispositivo</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
