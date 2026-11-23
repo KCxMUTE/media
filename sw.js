@@ -3,7 +3,7 @@ const CACHE = 'media-pwa-v1';
 const ASSETS = [
   './',
   './index.html',
-  './styles.css',
+  './css/styles.css',
   './app.js',
   './manifest.webmanifest',
   './icons/icon-192.png',
